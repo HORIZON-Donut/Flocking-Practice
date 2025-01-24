@@ -405,13 +405,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e63d66226276f2c9ad97f702cbf1b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFOV: 180
-  maxAcceleration: 0
-  maxVelocity: 0
-  wanderJitter: 0
-  wanderRadius: 0
-  wanderDistance: 0
-  wanderPriority: 0
+  maxFOV: 120
+  maxAcceleration: 40
+  maxVelocity: 25
+  wanderJitter: 10
+  wanderRadius: 2
+  wanderDistance: 3
+  wanderPriority: 10
   cohesionRadius: 0
   cohesionPriority: 0
   alignmentRadius: 0
