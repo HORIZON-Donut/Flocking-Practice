@@ -15,8 +15,8 @@ public class Member : MonoBehaviour
 
 	void Start()
 	{
-		level = FindObjectOfType<Level>();
-		conf = FindObjectOfType<MemberConfig>();
+		level = FindFirstObjectByType<Level>();
+		conf = FindFirstObjectByType<MemberConfig>();
 
 		position = transform.position;
 		velocity = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0);
