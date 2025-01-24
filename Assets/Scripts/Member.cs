@@ -39,4 +39,14 @@ public class Member : MonoBehaviour
 	{
 		return Random.Range(0f, 1f) - Random.Range(0f, 1f);
 	}
+
+	void Update()
+	{
+		//
+	}
+
+	protected Vector3 Wander()
+	{
+		//
+	}
 }
