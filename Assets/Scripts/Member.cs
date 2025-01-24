@@ -11,6 +11,8 @@ public class Member : MonoBehaviour
 	public Level level;
 	public MemberConfig conf;
 
+	private Vector3 wanderTarget;
+
 	void Start()
 	{
 		level = FindObjectOfType<Level>();
@@ -47,6 +49,16 @@ public class Member : MonoBehaviour
 
 	protected Vector3 Wander()
 	{
-		//
+		
+		float jitter = conf.wanderJitter * Time.deltaTime;
+		wanderTarget += new Vector3(RandomBinomail() * jitter, RandomBinomail() * jitter, 0);
+		wanderTarget = wanderTarget.normalized;
+		wanderTarget *= conf.wanderRadius;
+
+		Vector3 targetInLocalSpace = wanderTarget + new Vector3(0, conf.wanderDistance, 0);
+		Vector3 targetInWorldSpace = transform.TransformPoint(targetInLocalSpace);
+		targetInWorldSpace -= this.position;
+
+		return targetInWorldSpace.normalized;
 	}
 }
