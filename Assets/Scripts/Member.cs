@@ -1,9 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Member : MonoBehaviour
 {
 	public Vector3 position;
-	public Vector3 celocity;
+	public Vector3 velocity;
 	public Vector3 acceleration;
 
 	public Level level;
@@ -12,10 +14,10 @@ public class Member : MonoBehaviour
 	void Start()
 	{
 		level = FindObjectOfType<Level>();
-		conf = FindObjectOfTpye<MemberConfig>();
+		conf = FindObjectOfType<MemberConfig>();
 
 		position = transform.position;
-		celovity = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0);
+		velocity = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0);
 	}
 
 	void WrapAround(ref Vector3 vector, float min, float max)
@@ -28,7 +30,7 @@ public class Member : MonoBehaviour
 	float WrapAroundFloat(float value, float min, float max)
 	{
 		if (value > max) {value = min;}
-		else if (value < min) {value = max}
+		else if (value < min) {value = max;}
 
 		return value;
 	}
