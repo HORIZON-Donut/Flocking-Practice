@@ -2,15 +2,25 @@ using UnityEngine;
 
 public class MemberConfig : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+	public float maxFOV = 180;
+	public float maxAcceleration;
+	public float maxVelocity;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public float wanderJitter;
+	public float wanderRadius;
+	public float wanderDistance;
+	public float wanderPriority;
+
+	public float cohesionRadius;
+	public float cohesionPriority;
+
+	public float alignmentRadius;
+	public float alignmentPriority;
+
+	public float separationRadius;
+	public float separationPriority;
+
+	public float avoidanceRadius;
+	public float avoidancePriority;
+
 }
