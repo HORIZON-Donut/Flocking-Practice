@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collecttions.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Level : MonoBehaviour
