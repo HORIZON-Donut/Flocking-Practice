@@ -25,8 +25,8 @@ public class Level : MonoBehaviour
 		Spawn(memberPrefab, numberOfMembers);
 		Spawn(enemyPrefab, numberOfEnemies);
 
-		members.AddRange(FindFirstObjectByType<Member>());
-		enemies.AddRange(FindFirstObjectByType<Enemy>());
+		members.AddRange(FindObjectsOfType<Member>());
+		enemies.AddRange(FindObjectsOfType<Enemy>());
     }
 
 	void Spawn(Transform prefab, int count)
