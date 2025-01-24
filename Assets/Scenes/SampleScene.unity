@@ -349,6 +349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1288756467}
+  - component: {fileID: 1288756468}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -371,6 +372,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1288756468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288756466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232da49697b27d0c0a227b4426e65968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memberPrefab: {fileID: 4137581519497249716, guid: 8efcc5dc8cccd82bdba5baf3e28ff5c8, type: 3}
+  enemyPrefab: {fileID: 5610479386487438463, guid: 3c5c6f077ee4f5a0aa53d4be1f942011, type: 3}
+  numberOfMembers: 200
+  numberOfEnemies: 5
+  members: []
+  enemies: []
+  bounds: 100
+  spawnRadius: 50
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
