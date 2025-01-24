@@ -52,6 +52,8 @@ public class Member : MonoBehaviour
 
 		position = position + velocity * Time.deltaTime;
 		WrapAround(ref position, -level.bounds, level.bounds);
+
+		transform.position = position;
 	}
 
 	protected Vector3 Wander()
