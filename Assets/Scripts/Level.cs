@@ -24,6 +24,9 @@ public class Level : MonoBehaviour
 
 		Spawn(memberPrefab, numberOfMembers);
 		Spawn(enemyPrefab, numberOfEnemies);
+
+		members.AddRange(FindObjectOfType<Member>());
+		enemies.AddRange(FindObjectOfType<Enemy>());
     }
 
 	void Spawn(Transform prefab, int count)
@@ -32,5 +35,21 @@ public class Level : MonoBehaviour
 		{
 			Instantiate(prefab, new Vector3(Random.Range(-spawnRadius, spawnRadius), Random.Range(-spawnRadius, spawnRadius), 0), Quaternion.identity);
 		}
+	}
+
+	public List<Member> GetNeighbors(Member member, float radius)
+	{
+		List<Member> neighborFound = new List<Member>();
+
+		foreach (var othermember in members)
+		{
+			if (othermember == member) {continue;}
+			if (Vector3.Distance(member.position, othermember.position) <= radius)
+			{
+				neighborFound.Add(othermember);
+			}
+		}
+
+		return neighborFound;
 	}
 }
