@@ -44,7 +44,14 @@ public class Member : MonoBehaviour
 
 	void Update()
 	{
-		//
+		acceleration = Wander();
+		acceleration = Vector3.ClampMagnitude(acceleration, conf.maxAcceleration);
+
+		velocity = velocity + acceleration * Time.deltaTime;
+		velocity = Vector3.ClampMagnitude(velocity, conf.maxVelocity);
+
+		position = position + velocity * Time.deltaTime;
+		WrapAround(ref position, -level.bounds, level.bounds);
 	}
 
 	protected Vector3 Wander()
