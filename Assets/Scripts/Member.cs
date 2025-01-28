@@ -49,8 +49,7 @@ public class Member : MonoBehaviour
 
 	void Update()
 	{
-		//acceleration = Combine();
-		acceleration = Alignment();
+		acceleration = Combine();
 		acceleration = Vector3.ClampMagnitude(acceleration, conf.maxAcceleration);
 
 		velocity = velocity + acceleration * Time.deltaTime;
@@ -79,7 +78,7 @@ public class Member : MonoBehaviour
 
 	virtual protected Vector3 Combine()
 	{
-		Vector3 finalVec = conf.cohesionPriority * Cohesion() + conf.wanderPriority * Wander();
+		Vector3 finalVec = conf.cohesionPriority * Cohesion() + conf.wanderPriority * Wander() + conf.alignmentPriority * Alignment();
 		return finalVec;
 	}
 
