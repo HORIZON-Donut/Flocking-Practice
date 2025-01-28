@@ -418,8 +418,8 @@ MonoBehaviour:
   alignmentPriority: 90
   separationRadius: 10
   separationPriority: 90
-  avoidanceRadius: 0
-  avoidancePriority: 0
+  avoidanceRadius: 40
+  avoidancePriority: 700
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
