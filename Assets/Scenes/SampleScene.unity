@@ -412,8 +412,8 @@ MonoBehaviour:
   wanderRadius: 2
   wanderDistance: 3
   wanderPriority: 10
-  cohesionRadius: 0
-  cohesionPriority: 0
+  cohesionRadius: 20
+  cohesionPriority: 60
   alignmentRadius: 0
   alignmentPriority: 0
   separationRadius: 0
