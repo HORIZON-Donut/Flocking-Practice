@@ -136,7 +136,7 @@ public class Member : MonoBehaviour
 		Vector3 separateVector = new Vector3();
 		var members = level.GetNeighbors(this, conf.separationRadius);
 		if(members.Count == 0)
-			return separationVector;
+			return separateVector;
 
 		foreach(var member in members)
 		{
