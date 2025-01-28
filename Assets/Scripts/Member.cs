@@ -115,7 +115,7 @@ public class Member : MonoBehaviour
 		return cohesionVector;
 	}
 
-	Vector3 Alignment()
+	protected Vector3 Alignment()
 	{
 		Vector3 alignVector = new Vector3();
 		var members = level.GetNeighbors(this, conf.alignmentRadius);
