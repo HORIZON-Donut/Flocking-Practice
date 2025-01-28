@@ -24,12 +24,15 @@ public class Level : MonoBehaviour
     {
 		members = new List<Member>();
 		enemies = new List<Enemy>();
+		scaventures = new List<Scaventure>();
 
 		Spawn(memberPrefab, numberOfMembers);
 		Spawn(enemyPrefab, numberOfEnemies);
+		Spawn(scaventurePrefab, numberOfScaventures);
 
 		members.AddRange(FindObjectsOfType<Member>());
 		enemies.AddRange(FindObjectsOfType<Enemy>());
+		scaventures.AddRange(FindObjectsOfType<Scaventure>());
     }
 
 	void Spawn(Transform prefab, int count)
