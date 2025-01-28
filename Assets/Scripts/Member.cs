@@ -50,7 +50,8 @@ public class Member : MonoBehaviour
 	void Update()
 	{
 		//acceleration = Wander();
-		acceleration = Cohesion();
+		//acceleration = Cohesion();
+		acceleration = Combine();
 		acceleration = Vector3.ClampMagnitude(acceleration, conf.maxAcceleration);
 
 		velocity = velocity + acceleration * Time.deltaTime;
@@ -75,6 +76,12 @@ public class Member : MonoBehaviour
 		targetInWorldSpace -= this.position;
 
 		return targetInWorldSpace.normalized;
+	}
+
+	virtual protected Vector3 Combine()
+	{
+		Vector3 finalVec = conf.cohesionPriority * Cohesion() + conf.wanderPriority * Wander();
+		return finalVec;
 	}
 
 	Vector3 Cohesion()
