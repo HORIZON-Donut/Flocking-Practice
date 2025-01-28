@@ -6,12 +6,15 @@ public class Level : MonoBehaviour
 {
 	public Transform memberPrefab;
 	public Transform enemyPrefab;
+	public Transform scaventurePrefab;
 
 	public int numberOfMembers;
 	public int numberOfEnemies;
+	public int numberOfScaventures;
 
 	public List<Member> members;
 	public List<Enemy> enemies;
+	public List<Scaventure> scaventures;
 
 	public float bounds;
 	public float spawnRadius;
