@@ -389,8 +389,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 7429707602215514476, guid: 3c5c6f077ee4f5a0aa53d4be1f942011, type: 3}
   scaventurePrefab: {fileID: 3376892749835516571, guid: aa60cb1398166ad41a5344073ce58d88, type: 3}
   numberOfMembers: 200
-  numberOfEnemies: 20
-  numberOfScaventures: 100
+  numberOfEnemies: 5
+  numberOfScaventures: 10
   members: []
   enemies: []
   scaventures: []
