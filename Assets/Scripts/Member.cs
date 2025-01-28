@@ -49,9 +49,8 @@ public class Member : MonoBehaviour
 
 	void Update()
 	{
-		//acceleration = Wander();
-		//acceleration = Cohesion();
-		acceleration = Combine();
+		//acceleration = Combine();
+		acceleration = Alignment();
 		acceleration = Vector3.ClampMagnitude(acceleration, conf.maxAcceleration);
 
 		velocity = velocity + acceleration * Time.deltaTime;
@@ -114,5 +113,21 @@ public class Member : MonoBehaviour
 		cohesionVector = Vector3.Normalize(cohesionVector);
 
 		return cohesionVector;
+	}
+
+	Vector3 Alignment()
+	{
+		Vector3 alignVector = new Vector3();
+		var members = level.GetNeighbors(this, conf.alignmentRadius);
+		if(neighbors.Count == 0)
+			return alignVector;
+
+		foreach(var member in neighbors)
+		{
+			if(isInFOV(member.position)
+				alignVector += member.velocity;
+		}
+
+		return alignVector.normalized;
 	}
 }
