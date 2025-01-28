@@ -1,2 +1,0 @@
-State 01: Completed
-State 02: Completed
