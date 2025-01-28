@@ -44,7 +44,8 @@ public class Member : MonoBehaviour
 
 	bool isInFOV(Vector3 vec)
 	{
-		return Vector#.Angle(this.velocity, vec - this.position) <= conf.maxFOV;
+		return Vector3.Angle(this.velocity, vec - this.position) <= conf.maxFOV;
+	}
 
 	void Update()
 	{
@@ -103,7 +104,7 @@ public class Member : MonoBehaviour
 
 		cohesionVector /= countMembers;
 		cohesionVector = cohesionVector - this.position;
-		cohesionVector = Vector3.Nomalize(cohesionVector);
+		cohesionVector = Vector3.Normalize(cohesionVector);
 
 		return cohesionVector;
 	}
