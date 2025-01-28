@@ -119,12 +119,12 @@ public class Member : MonoBehaviour
 	{
 		Vector3 alignVector = new Vector3();
 		var members = level.GetNeighbors(this, conf.alignmentRadius);
-		if(neighbors.Count == 0)
+		if(members.Count == 0)
 			return alignVector;
 
-		foreach(var member in neighbors)
+		foreach(var member in members)
 		{
-			if(isInFOV(member.position)
+			if(isInFOV(member.position))
 				alignVector += member.velocity;
 		}
 
