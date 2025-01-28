@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3376892749835516571}
+  - component: {fileID: 4243694768238271537}
   m_Layer: 0
   m_Name: Scaventure
   m_TagString: Untagged
@@ -36,6 +37,23 @@ Transform:
   - {fileID: 5338102626801467835}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4243694768238271537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565676448978464687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560af3ec6740792f6a79ac192d649277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
+  level: {fileID: 0}
+  conf: {fileID: 0}
 --- !u!1 &613174316595198180
 GameObject:
   m_ObjectHideFlags: 0

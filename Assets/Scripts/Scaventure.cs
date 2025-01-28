@@ -1,12 +1,6 @@
 using UnityEngine;
 
-public class: Member
+public class Scaventure: Member
 {
-	void Start()
-	{
-	}
-
-	void Update()
-	{
-	}
+	//
 }
