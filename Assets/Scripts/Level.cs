@@ -53,7 +53,7 @@ public class Level : MonoBehaviour
 		return neighborFound;
 	}
 
-	public List<Enemy> GetEnemy(Member member, float radius)
+	public List<Enemy> GetEnemies(Member member, float radius)
 	{
 		List<Enemy> returnEnemies = new List<Enemy>();
 		foreach(var enemy in returnEnemies)

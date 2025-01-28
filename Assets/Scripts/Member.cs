@@ -155,7 +155,7 @@ public class Member : MonoBehaviour
 
 	Vector3 Avoidance()
 	{
-		Vector3 avoidVector = new Vector3;
+		Vector3 avoidVector = new Vector3();
 		var enemyList = level.GetEnemies(this, conf.avoidanceRadius);
 		if(enemyList.Count == 0)
 			return avoidVector;
@@ -170,7 +170,7 @@ public class Member : MonoBehaviour
 
 	Vector3 RunAway(Vector3 target)
 	{
-		Vector3 neededVelocity = (position - target).normailzed * conf.maxVelocity;
+		Vector3 neededVelocity = (position - target).normalized * conf.maxVelocity;
 		return neededVelocity;
 	}
 }
