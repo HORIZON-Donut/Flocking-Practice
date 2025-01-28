@@ -78,7 +78,8 @@ public class Member : MonoBehaviour
 
 	virtual protected Vector3 Combine()
 	{
-		Vector3 finalVec = conf.cohesionPriority * Cohesion() + conf.wanderPriority * Wander() + conf.alignmentPriority * Alignment() + conf.separationPriority * Separation();
+		Vector3 finalVec = conf.cohesionPriority * Cohesion() + conf.wanderPriority * Wander() + conf.alignmentPriority * Alignment()
+		+ conf.separationPriority * Separation() + conf.avoidancePriority * Avoidance();
 		return finalVec;
 	}
 
@@ -150,5 +151,26 @@ public class Member : MonoBehaviour
 		}
 
 		return separateVector.normalized;
+	}
+
+	Vector3 Avoidance()
+	{
+		Vector3 avoidVector = new Vector3;
+		var enemyList = level.GetEnemies(this, conf.avoidanceRadius);
+		if(enemyList.Count == 0)
+			return avoidVector;
+
+		foreach(var enemy in enemyList)
+		{
+			avoidVector += RunAway(enemy.position);
+		}
+
+		return avoidVector.normalized;
+	}
+
+	Vector3 RunAway(Vector3 target)
+	{
+		Vector3 neededVelocity = (position - target).normailzed * conf.maxVelocity;
+		return neededVelocity;
 	}
 }
