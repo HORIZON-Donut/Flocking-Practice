@@ -56,7 +56,7 @@ public class Level : MonoBehaviour
 	public List<Enemy> GetEnemies(Member member, float radius)
 	{
 		List<Enemy> returnEnemies = new List<Enemy>();
-		foreach(var enemy in returnEnemies)
+		foreach(var enemy in enemies)
 		{
 			if(Vector3.Distance(member.position, enemy.position) <= radius)
 			{
