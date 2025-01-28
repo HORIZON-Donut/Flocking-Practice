@@ -42,9 +42,14 @@ public class Member : MonoBehaviour
 		return Random.Range(0f, 1f) - Random.Range(0f, 1f);
 	}
 
+	bool isInFOV(Vector3 vec)
+	{
+		return Vector#.Angle(this.velocity, vec - this.position) <= conf.maxFOV;
+
 	void Update()
 	{
-		acceleration = Wander();
+		//acceleration = Wander();
+		acceleration = Cohesion();
 		acceleration = Vector3.ClampMagnitude(acceleration, conf.maxAcceleration);
 
 		velocity = velocity + acceleration * Time.deltaTime;
@@ -69,5 +74,37 @@ public class Member : MonoBehaviour
 		targetInWorldSpace -= this.position;
 
 		return targetInWorldSpace.normalized;
+	}
+
+	Vector3 Cohesion()
+	{
+		Vector3 cohesionVector = new Vector3();
+		int countMembers = 0;
+		var neighbors = level.GetNeighbors(this, conf.cohesionRadius);
+		if(neighbors.Count == 0)
+		{
+			return cohesionVector;
+		}
+
+		foreach(var member in neighbors)
+		{
+			if(isInFOV(member.position))
+			{
+				cohesionVector += member.position;
+				countMembers++;
+			}
+
+		}
+
+		if(countMembers == 0)
+		{
+			return cohesionVector;
+		}
+
+		cohesionVector /= countMembers;
+		cohesionVector = cohesionVector - this.position;
+		cohesionVector = Vector3.Nomalize(cohesionVector);
+
+		return cohesionVector;
 	}
 }
