@@ -49,7 +49,8 @@ public class Member : MonoBehaviour
 
 	void Update()
 	{
-		acceleration = Combine();
+		//acceleration = Combine();
+		acceleration = Separation();
 		acceleration = Vector3.ClampMagnitude(acceleration, conf.maxAcceleration);
 
 		velocity = velocity + acceleration * Time.deltaTime;
@@ -128,5 +129,27 @@ public class Member : MonoBehaviour
 		}
 
 		return alignVector.normalized;
+	}
+
+	Vector3 Separation()
+	{
+		Vector3 separateVector = new Vector3();
+		var members = level.GetNeighbors(this, conf.separationRadius);
+		if(members.Count == 0)
+			return separationVector;
+
+		foreach(var member in members)
+		{
+			if(isInFOV(member.position))
+			{
+				Vector3 movingTowards = this.position - member.position;
+				if(movingTowards.magnitude > 0)
+				{
+					separateVector += movingTowards.normalized/movingTowards.magnitude;
+				}
+			}
+		}
+
+		return separateVector.normalized;
 	}
 }
