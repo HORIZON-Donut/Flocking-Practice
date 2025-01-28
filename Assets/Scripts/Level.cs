@@ -52,4 +52,18 @@ public class Level : MonoBehaviour
 
 		return neighborFound;
 	}
+
+	public List<Enemy> GetEnemy(Member member, float radius)
+	{
+		List<Enemy> returnEnemies = new List<Enemy>();
+		foreach(var enemy in returnEnemies)
+		{
+			if(Vector3.Distance(member.position, enemy.position) <= radius)
+			{
+				returnEnemies.Add(enemy);
+			}
+		}
+
+		return returnEnemies;
+	}
 }
